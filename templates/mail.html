@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add-CollegeRepository</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+</head>
+<style>
+    /* Style for the buttons */
+    .button {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    /* Style for the Confirm button */
+    .confirm {
+        background-color: blue;
+    }
+
+    /* Style for the Delete button */
+    .delete {
+        background-color: red;
+    }
+
+    /* Style for the button container */
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    {% comment %} <div class="button-container">
+        <button class="button confirm">
+            Confirm <i class="fa fa-check"></i>
+        </button>
+        <button class="button delete">
+            Delete <i class="fa fa-trash"></i>
+        </button>
+    </div> {% endcomment %}
+    <div class="button-container">
+        <form action="{% url 'confirm' token=token %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Confirm"class="button confirm">
+        </form>
+        <form action="{% url 'delete' token=token %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete" class="button delete">
+        </form>
+    </div>
+</body>
+
+</html>
