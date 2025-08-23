@@ -10,7 +10,7 @@ College Repository is a website built using HTML, CSS, JavaScript, and Django. I
 
 ## Website
 
-You can access the website at the following link: [College Repository](https://collegerepository.pythonanywhere.com/add)
+You can access the website at the following link: [College Repository](https://collegerepository.pythonanywhere.com)
 
 ## Technologies Used
 
